@@ -51,9 +51,9 @@ RCT_EXPORT_METHOD(authenticate: (NSString *)reason
     }
 
     // Device has FingerprintScanner
-    if ([context canEvaluatePolicy:LAPolicyDeviceOwnerAuthenticationWithBiometrics error:&error]) {
-        // Attempt Authentication
-        [context evaluatePolicy:LAPolicyDeviceOwnerAuthenticationWithBiometrics
+	if ([context canEvaluatePolicy:LAPolicyDeviceOwnerAuthentication error:&error]) {
+		// Attempt Authentication
+		[context evaluatePolicy:LAPolicyDeviceOwnerAuthentication
                 localizedReason:reason
                           reply:^(BOOL success, NSError *error)
          {
